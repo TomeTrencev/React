@@ -1,15 +1,38 @@
-import React from 'react';
 
-export const Movies = (props) =>{ 
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export const Movies = (props) => {
     console.log(props);
-    return(
+    return (
         <div id="movies">
-           <h2 style={{color:'red', fontSize:40, backgroundColor:'black'}}> {props.movies.name}</h2>
-           <h3 style={{backgroundColor:'lightcyan'}}>Date: {props.movies.date}</h3>
-           <h3>Genre: {props.movies.genre}</h3>
-           <p style={{fontWeight:800}}>Plot: {props.movies.plot}</p>
-           <p> <a href={props.movies.imdbLink}>{props.movies.imdbLink}</a></p>
-           <img src={props.movies.imgUrl} width='200px'></img>
+            <ol>
+                {props.movies.map((film, i) => {
+                    return (
+                        <li key={i}>
+                           <h1>{film.name} </h1>
+                            <h3 style={{ backgroundColor: 'red' }}>Released in  :{film.date}</h3>
+                            <p style={{ color: 'blue' }}>Plot : {film.plot}</p>
+                            <br></br>
+                            IMBD:<a href='{film.imdbLink}'>{film.imdbLink}</a> <br></br> <img src={film.imgUrl} width='200px'></img>
+                        </li>
+                    )
+                })}
+            </ol>
+
         </div>
     )
 }
+
+Movies.propTypes = {
+    movies: PropTypes.arrayOf(PropTypes.object).isRequired
+}
+
+{/* < ol> {props.movies.map((film,i) => (<h1 key={i}>
+    <h1>{film.name} </h1>
+    <h3 style={{backgroundColor:'red'}}>Released in  :{film.date}</h3>
+    <p style={{ color: 'blue' }}>Plot : {film.plot}</p>
+    <br></br>
+    IMBD:<a href='{film.imdbLink}'>{film.imdbLink}</a> <br></br> <img src={film.imgUrl} width='200px'></img> </h1>))}
+
+</ol> */}

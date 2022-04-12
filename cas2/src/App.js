@@ -17,7 +17,10 @@ var student = {
   college: 'Semos'
 }
 
-let listaNaOvosje = ['apple', 'oranges']
+let listaNaOvosje = [
+
+
+'apple', 'oranges']
 
 export function App() {
 
