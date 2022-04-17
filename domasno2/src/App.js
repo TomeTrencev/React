@@ -1,4 +1,4 @@
-import React,{useState, } from "react";
+import React,{useState,useEffect } from "react";
 
 export function App() {
 
@@ -7,9 +7,11 @@ export function App() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState ('');
   const [godini, setGodini] = useState('');
-  const [showText, setShowText] = useState(false);
-  const onClick = () => setShowText(true);
-  
+  const [showTable, setShowTable] = useState(true);
+
+  useEffect(()=>{
+    setShowTable(false)
+  }, [])
  
 
   return(
@@ -49,7 +51,7 @@ export function App() {
      />
     
      <br/>
-     
+     {showTable && 
      <table border=''>
        <thead>
        <tr>
@@ -90,7 +92,8 @@ export function App() {
          </tr>
        </tbody>
      </table>
-     <button onClick={onClick}>Click me</button>
+}
+     <button onClick={() => setShowTable(!showTable)}>Show Table</button>
       
     </div>
     
