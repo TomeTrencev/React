@@ -25,6 +25,6 @@ export const Movies = (props) => {
 }
 
 Movies.propTypes = {
-    movies: PropTypes.arrayOf(PropTypes.object).isRequired
+   movies: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
