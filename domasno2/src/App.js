@@ -10,7 +10,7 @@ export function App() {
   const [showTable, setShowTable] = useState(true);
 
   useEffect(()=>{
-    setShowTable(false)
+    setShowTable(true)
   }, [])
  
 
