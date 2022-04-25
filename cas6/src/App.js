@@ -112,16 +112,10 @@ export function App() {
         onChange={(e) => { setNewTodo(e.target.value) }}
       />
       <button onClick={addNewTodo}>Add New Todo</button>
-      <Todos listOfTodos={todos} markTodoAsDone={markTodoAsDone} />
+      <Todos listOfTodos={todos} markTodoAsDone={markTodoAsDone} handleDeleteClick= {handleDeleteClick}  />
       
-      <ul className="todo-list">
-        {todos.map((todo) => (
-          <li key={todo.id}>
-             <button onClick={() => handleDeleteClick(todo.id)}>X</button>
-          </li>
-        ))}
-      </ul>
       
+  
     </div>
   )
 }
