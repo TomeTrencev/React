@@ -1,4 +1,5 @@
 import { BUY_CAKE, RESTOCK_CAKES } from "../constants/CakeConstants";
+
 const initialState = {
     cakes: 10,
     message: undefined
